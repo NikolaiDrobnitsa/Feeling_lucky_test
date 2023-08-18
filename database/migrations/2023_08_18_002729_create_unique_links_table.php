@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('unique_links', function (Blueprint $table) {
             $table->id();
+            $table->string('link')->unique();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

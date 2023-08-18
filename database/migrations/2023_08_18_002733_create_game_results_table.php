@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('game_results', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->enum('result', ['Win', 'Lose']);
+            $table->unsignedInteger('rolled_number');
+            $table->unsignedInteger('winAmount');
             $table->timestamps();
         });
     }

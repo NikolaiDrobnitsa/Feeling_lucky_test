@@ -24,9 +24,9 @@ class UniqueLinkController extends Controller
 
         $uniqueLink = Str::random(12);
         if ($user->uniqueLinks->count() > 0) {
-            $user->uniqueLinks->first()->update(['link' => $uniqueLink, 'created_at' => Carbon::now()]);
+            $user->uniqueLinks->first()->update(['link' => $uniqueLink, 'created_at' => Date::now()]);
         } else {
-            $user->uniqueLinks()->create(['link' => $uniqueLink, 'created_at' => Carbon::now()]);
+            $user->uniqueLinks()->create(['link' => $uniqueLink, 'created_at' => Date::now()]);
         }
 
         return redirect('/generate-link/' . $uniqueLink);
