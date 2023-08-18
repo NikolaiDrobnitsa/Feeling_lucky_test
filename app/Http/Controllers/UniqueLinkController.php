@@ -70,12 +70,7 @@ class UniqueLinkController extends Controller
         return view('generate-link', compact('uniqueLink','expirationDate'));
     }
 
-    public function showMainPage()
-    {
-        $uniqueLink = session('uniqueLink');
 
-        return view('main', compact('uniqueLink'));
-    }
     public function deactivateLink($uniqueLink)
     {
         $user = Auth::user();
