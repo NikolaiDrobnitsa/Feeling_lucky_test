@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UniqueLinkController extends Model
+class UniqueLink extends Model
 {
     use HasFactory;
+    protected $fillable = ['link'];
 }
